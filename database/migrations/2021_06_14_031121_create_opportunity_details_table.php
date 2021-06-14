@@ -29,7 +29,8 @@ class CreateOpportunityDetailsTable extends Migration
         Schema::table('opportunity_details', function (Blueprint $table) {
             $table->foreign('opportunity_id')
                 ->references('id')
-                ->on('opportunities');
+                ->on('opportunities')
+                ->onDelete('cascade');
         });
     }
 
