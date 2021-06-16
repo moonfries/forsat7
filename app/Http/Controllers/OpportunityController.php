@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Opportunity;
+use App\Http\Resources\OpportunityCollection;
 use Illuminate\Http\Request;
 
 class OpportunityController extends Controller
@@ -14,7 +15,8 @@ class OpportunityController extends Controller
      */
     public function index()
     {
-        //
+        // return Opportunity::paginate(10);
+        return new OpportunityCollection(Opportunity::paginate(10));
     }
 
     /**

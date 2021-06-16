@@ -24,3 +24,7 @@ Route::prefix('auth')->group(function() {
     Route::get('/logout', 'AuthController@logout')->middleware('auth:api');
     Route::get('/user', 'AuthController@user')->middleware('auth:api');
 });
+
+// Api Resources
+
+Route::get('opportunities', 'OpportunityController@index');
