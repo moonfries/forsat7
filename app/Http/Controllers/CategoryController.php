@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Lookups\Category;
+use App\Http\Resources\Lookups\CategoryCollection;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -14,7 +15,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        return new CategoryCollection(Category::all());
     }
 
     /**
@@ -46,8 +47,13 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        return $category;
     }
+
+    // public function test()
+    // {
+    //     return 'trying';
+    // }
 
     /**
      * Show the form for editing the specified resource.

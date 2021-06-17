@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
+    public function authFailed() {
+        return response('unauthenticated', 401);
+    }
+
     public function register(Request $request) {
         $validator = Validator::make($request->all(), [
             'firstName' => 'required|string|max:255',
