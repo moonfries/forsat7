@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Opportunity;
 use App\Http\Resources\OpportunityCollection;
+use App\Http\Requests\OpportunityStore;
 use Illuminate\Http\Request;
 
 class OpportunityController extends Controller
@@ -35,9 +36,12 @@ class OpportunityController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(OpportunityStore $request)
     {
-        //
+        // $request->validate([
+        //     'title' => 'required|string|max:255',
+        //     'description' => 'required'
+        // ]);
     }
 
     /**
